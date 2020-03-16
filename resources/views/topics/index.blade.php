@@ -12,6 +12,22 @@
       </div>
     @endif
 
+    <div class="card ">
+      <div class="card-header bg-transparent">
+        <ul class="nav nav-pills">
+          <li class="nav-item">
+            <a class="nav-link {{ active_class( ! if_query('order', 'recent')) }}" href="{{ Request::url() }}?order=default">
+              最后回复
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link {{ active_class(if_query('order', 'recent')) }}" href="{{ Request::url() }}?order=recent">
+              最新发布
+            </a>
+          </li>
+        </ul>
+      </div>
+
       <div class="card-body">
         {{-- 话题列表 --}}
         @include('topics._topic_list', ['topics' => $topics])
@@ -22,10 +38,10 @@
       </div>
     </div>
   </div>
-
-  <div class="col-lg-3 col-md-3 sidebar">
-    @include('topics._sidebar')
+      <div class="col-lg-3 col-md-3 sidebar">
+        @include('topics._sidebar')
+      </div>
+    </div>
   </div>
-</div>
 
 @endsection
