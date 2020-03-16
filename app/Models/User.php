@@ -38,4 +38,9 @@ class User extends Authenticatable implements MustVerifyEmailContract
         return $this->registered($request, $user)
                         ?: redirect($this->redirectPath());
     }
+
+    public function topics()
+    {
+        return $this->hasMany(Topic::class);
+    }
 }
