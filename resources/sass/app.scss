@@ -154,3 +154,19 @@ img {
       color: #b3b3b3;
   }
 }
+
+/* notification */
+.notification-badge {
+  .badge {
+    font-size: 12px;
+    margin-top: 14px;
+  }
+
+  .badge-secondary {
+    background-color: #EBE8E8;
+  }
+
+  .badge-hint {
+    background-color: #d15b47 !important;
+  }
+}
